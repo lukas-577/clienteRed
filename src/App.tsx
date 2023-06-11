@@ -22,29 +22,22 @@ function App() {
 
 
   const getBusInterface2 = async () => {
-    try {
-      await fetch(`https://datosreddocker.onrender.com/datos/${input}`)
-        .then((res) => res.json())
-        .then((datos) => {
-          console.log(datos);
-          const bus = datos as IBusData[];
-          setBusList(Array.isArray(bus) ? bus : []);
-          console.log(bus);
-        }).catch((error: IProps) => {
-          console.log(error);
-          setError({
-            isError: true,
-            message: error.message
-          });
-        }).finally(() => {
-          setLoading(false);
-        })
-    } catch (error) {
-      console.log(error);
-
-    } finally {
-      setLoading(false);
-    }
+    await fetch(`https://datosreddocker.onrender.com/datos/${input}`)
+      .then((res) => res.json())
+      .then((datos) => {
+        console.log(datos);
+        const bus = datos as IBusData[];
+        setBusList(Array.isArray(bus) ? bus : []);
+        console.log(bus);
+      }).catch((error: IProps) => {
+        console.log(error);
+        setError({
+          isError: true,
+          message: error.message
+        });
+      }).finally(() => {
+        setLoading(false);
+      })
   }
 
   const handlerChange = (value: string) => {
