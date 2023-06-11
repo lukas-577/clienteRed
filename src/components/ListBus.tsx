@@ -1,10 +1,14 @@
-import { IBusData } from "../App"
 import { Grid } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import DirectionsBusIcon from '@mui/icons-material/DirectionsBus';
+import { IBusData } from '../interfaces/busData.interface';
 
 export const ListBus = (busList: IBusData[]) => {
+
+    if (busList.length === 0) {
+        return null;
+    }
 
     return (
         <>
@@ -21,7 +25,7 @@ export const ListBus = (busList: IBusData[]) => {
                             </Paper>
                         </Box>
                     </Grid>
-                ))}
+                ))}:
             </Grid>
         </>
 
