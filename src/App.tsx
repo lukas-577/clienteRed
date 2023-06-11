@@ -23,7 +23,7 @@ function App() {
 
   const getBusInterface2 = async () => {
     try {
-      await fetch(`datosreddocker.onrender.com/datos/${input}`)
+      await fetch(`https://datosreddocker.onrender.com/datos/${input}`)
         .then((res) => res.json())
         .then((datos) => {
           console.log(datos);
