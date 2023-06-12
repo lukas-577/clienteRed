@@ -23,7 +23,7 @@ function App() {
 
   const getBusInterface2 = async () => {
     setLoading(true);
-    await fetch(`https://datosreddocker.onrender.com/datos/${input}`)
+    await fetch(`https://datosreddocker.onrender.com/datos/${input}`, { cache: 'no-store' })
       .then(async (res) => {
         if (!res.ok) {
           const errorData = await res.json();
