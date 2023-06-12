@@ -24,11 +24,18 @@ function App() {
   const getBusInterface2 = async () => {
     setLoading(true);
     await fetch(`https://datosreddocker.onrender.com/datos/${input}`)
-      .then((res) => res.json())
+      .then(async (res) => {
+        if (!res.ok) {
+          const errorData = await res.json();
+          const errorMessage = errorData || errorData.message == "Error desconocido";
+          throw errorMessage
+        }
+        return res.json();
+      })
       .then((datos) => {
         console.log(datos);
         const bus = datos as IBusData[];
-        setBusList(Array.isArray(bus) ? bus : []);
+        setBusList(bus.length > 0 ? bus : []);
         console.log(bus);
       }).catch((error: IProps) => {
         console.log(error);
