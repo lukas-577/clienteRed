@@ -27,7 +27,7 @@ function App() {
       .then(async (res) => {
         if (!res.ok) {
           const errorData = await res.json();
-          const errorMessage = errorData || errorData.message == "Error desconocido";
+          const errorMessage = errorData || errorData.message === "Error desconocido";
           throw errorMessage
         }
         return res.json();
