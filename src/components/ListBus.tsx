@@ -25,7 +25,7 @@ export const ListBus = (busList: IBusData[]) => {
                             </Paper>
                         </Box>
                     </Grid>
-                ))}:
+                ))}
             </Grid>
         </>
 

@@ -20,11 +20,10 @@ function App() {
   const [error, setError] = useState({ isError: false, message: '' });
   const [loading, setLoading] = useState(false);
 
-  const timestamp = Date.now();
 
   const getBusInterface2 = async () => {
     setLoading(true);
-    await fetch(`https://datosreddocker.onrender.com/datos/${input}?timestamp=${timestamp}`, { cache: 'no-store' })
+    await fetch(`https://datosreddocker.onrender.com/datos/${input}`)
       .then(async (res) => {
         if (!res.ok) {
           const errorData = await res.json();
