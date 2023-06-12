@@ -22,6 +22,7 @@ function App() {
 
 
   const getBusInterface2 = async () => {
+    setLoading(true);
     await fetch(`https://datosreddocker.onrender.com/datos/${input}`)
       .then((res) => res.json())
       .then((datos) => {
