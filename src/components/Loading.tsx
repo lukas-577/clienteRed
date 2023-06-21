@@ -7,7 +7,7 @@ export const Loading = () => {
             <p>
                 Obteniendo Datos...
             </p>
-            <CircularProgress color="secondary" />
+            <CircularProgress color="success" />
         </div>
     )
 }

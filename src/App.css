@@ -1,6 +1,12 @@
 .App {
   text-align: center;
-  background-color: #e5be01;
+  background: rgb(231, 245, 218);
+  background: linear-gradient(0deg, rgba(231, 245, 218, 1) 30%, rgba(7, 102, 7, 1) 100%);
+}
+
+.ListBus {
+  background: rgb(231, 245, 218);
+  background: radial-gradient(circle, rgba(231, 245, 218, 1) 0%, rgba(7, 102, 7, 1) 100%);
 }
 
 .App-logo {
@@ -15,7 +21,8 @@
 }
 
 .App-header {
-  background-color: #e5be01;
+  background: rgb(231, 245, 218);
+  background: linear-gradient(0deg, rgba(231, 245, 218, 1) 30%, rgba(7, 102, 7, 1) 100%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
